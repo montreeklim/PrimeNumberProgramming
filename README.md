@@ -4,14 +4,7 @@ We provide an algorithm to solve a prime program (PP) and a code to check if the
 
 ### Example of a PP
 Consider the following problem:
-$\min -x_1 - x_2 - 2x_3$ subject to $3x_1 + 5x_2 + 10x_3 <= 10000$, $ 3x_1 + 8x_2 + x_3 <= 10000$, $ 3x_1 + 2x_2 + x_3 <= 10000$, and $x_1, x_2, x_3 \in [2,997] \cap \mathbb{P}$
-
-
-min -x1 -x2 -2x3
-st     3x1 + 5x2 + 10x3 <= 10000
-        3x1 + 8x2 + x3      <= 10000
-        3x1 + 2x2 + x3      <= 10000
-         x1, x2, x3 in [2,997] and prime.
+$\min -x_1 - x_2 - 2x_3$ subject to $3x_1 + 5x_2 + 10x_3 <= 10000$, $3x_1 + 8x_2 + x_3 <= 10000$, $3x_1 + 2x_2 + x_3 <= 10000$, and $x_1, x_2, x_3 \in [2,997] \cap \mathbb{P}$.
 To solve this problem we assign:
 c = np.array([-1, -1, -2])
 A = np.array([[3,5,10],[3,8,1], [3,2,1]])
