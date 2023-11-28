@@ -5,11 +5,21 @@ We provide an algorithm to solve a prime program (PP) and a code to check if the
 ### General formulation of PP
 ```math
 \begin{align}
-  \min_{x} \quad & cx \\
+  z^* = \min_{x} \quad & cx \\
   \text{s.t.} \quad & Ax \geq b, \\
   & x_i \in [2,M] \cap \mathbb{P} \quad \forall i.
 \end{align}
 ```
+
+### Perturbed Problem
+```math
+\begin{align}
+  z = \min_{x} \quad & (c+ c_\delta)x \\
+  \text{s.t.} \quad & (A+A_\delta)x \geq b+b_\delta, \\
+  & x_i \in [2,M] \cap \mathbb{P} \quad \forall i.
+\end{align}
+```
+Given $\Delta \geq 0$, the sensitivity analysis can check if whether it can be implied that $z \geq z^* - \Delta$. 
 
 ### Example of a PP
 Consider the following problem:
