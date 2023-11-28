@@ -4,6 +4,7 @@ We provide an algorithm to solve a prime program (PP) and a code to check if the
 
 ### Example of a PP
 Consider the following problem:
+$\min -x_1 - x_2 - 2x_3$
 min -x1 -x2 -2x3
 st     3x1 + 5x2 + 10x3 <= 10000
         3x1 + 8x2 + x3      <= 10000
