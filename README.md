@@ -7,7 +7,7 @@ Consider the following problem:
 
 ```math
 \begin{align}
-  \min \quad -&x_1 - x_2 - 2x_3 \\
+  \min_{x_1,x_2,x_3} \quad &-x_1 - x_2 - 2x_3 \\
   \text{s.t.} \quad & 3x_1 + 5x_2 + 10x_3 && \leq 10000, \\
   & 3x_1 + 8x_2 + x_3 && \leq 10000, \\
   & 3x_1 + 2x_2 + x_3 && \leq 10000, \\
