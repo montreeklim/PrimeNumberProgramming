@@ -2,7 +2,7 @@
 This project is based on the paper **...**.
 We provide an algorithm to solve a prime program (PP) and a code to check if the sensitivity analysis works with the perturbed problem or not. There, using a proposed branch-and-bound algorithm with depth-first-search to solve a given PP. The branching variable is a non-prime relaxation solution which is the furthest from its closest prime number.
 
-### General formulation of PP
+### Formulation for a PP:
 ```math
 \begin{align}
   z^* = \min_{x} \quad & cx \\
@@ -11,7 +11,7 @@ We provide an algorithm to solve a prime program (PP) and a code to check if the
 \end{align}
 ```
 
-### Perturbed Problem
+### Formulation for a perturbed problem:
 ```math
 \begin{align}
   z = \min_{x} \quad & (c+ c_\delta)x \\
@@ -19,11 +19,10 @@ We provide an algorithm to solve a prime program (PP) and a code to check if the
   & x_i \in [2,M] \cap \mathbb{P} \quad \forall i.
 \end{align}
 ```
-Given $\Delta \geq 0$, the sensitivity analysis can check if whether it can be implied that $z \geq z^* - \Delta$. 
+Given $\Delta \geq 0$. The sensitivity analysis can check if it can be implied that $z \geq z^* - \Delta$ or not.
 
-### Example of a PP
+### Example of a PP code implementation:
 Consider the following problem:
-
 ```math
 \begin{align}
   \min_{x_1,x_2,x_3} \quad &-x_1 - x_2 - 2x_3 \\
@@ -49,6 +48,6 @@ Since $\bar{p}(841.08) = 853$ and $\underline{p}(841.08) = 839$, the distance be
 ## Repository content
 The repository contains the following content:
 - `PP_branch_and_bound.ipynb` a jupyter notebook file to run the branch-and-bound algorithm for a PP. The function returns number of nodes in the enumeration tree, the objective function value, and an optimal soultion.
-- `Sensitivity_Analysis_PP.ipynb` a jupyter notebook file to run the sensitivity analysis for a PP and its perturbed problem. The function returns True if the objective function value of the perturbed problem is at least z* - delta_z, and False if it cannot be implied by the sensitivity analysis.
+- `Sensitivity_Analysis_PP.ipynb` a jupyter notebook file to run the sensitivity analysis for a PP and its perturbed problem. The function returns True if the objective function value of the perturbed problem is at least $z* - \Delta$, and False if it cannot be implied by the sensitivity analysis.
 ## Requirements to run code
 The code uses the optimization solver Gurobi and sympy package which are therefore required to run it.
