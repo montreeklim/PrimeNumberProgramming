@@ -6,12 +6,13 @@ We provide an algorithm to solve a prime program (PP) and a code to check if the
 Consider the following problem:
 $\min -x_1 - x_2 - 2x_3$ subject to $3x_1 + 5x_2 + 10x_3 <= 10000$, $3x_1 + 8x_2 + x_3 <= 10000$, $3x_1 + 2x_2 + x_3 <= 10000$, and $x_1, x_2, x_3 \in [2,997] \cap \mathbb{P}$.
 To solve this problem we assign:
-c = np.array([-1, -1, -2])
-A = np.array([[3,5,10],[3,8,1], [3,2,1]])
-b = np.array([10000,10000,10000])
-lower_bounds=np.array([2,2,2])
-upper_bounds = np.array([997, 997, 997])
-node_count, global_ub, incumbent = branch_and_bound_prime(c, A, b, lower_bounds, upper_bounds)
+c = np.array([-1, -1, -2]),
+A = np.array([[3,5,10],[3,8,1], [3,2,1]]),
+b = np.array([10000,10000,10000]),
+lower_bounds=np.array([2,2,2]),
+upper_bounds = np.array([997, 997, 997]).
+The function is called as:
+node_count, global_ub, incumbent = branch_and_bound_prime(c, A, b, lower_bounds, upper_bounds).
 
 Then, the relaxation solution at the root node is x = [997, 841.08, 280.36].
 Since \bar{p}_{841.08} = 853 and \underline{p}_{841.08} = 839, the distance between its closest prime is 2.08 and \bar{p}_{280.36} = 281 and \underline{p}_{280.36} = 277, the distance between its closest prime is 0.64. We choose x2 to branch on because 2.08 > 0.64. The enumeration tree of this problem has 237 nodes with the objective function value of -2398.0 and the optimal solution of [x1, x2, x3]=[997.0, 839.0, 281.0].
