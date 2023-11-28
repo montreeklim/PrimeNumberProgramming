@@ -5,6 +5,20 @@ We provide an algorithm to solve a prime program (PP) and a code to check if the
 ### Example of a PP
 Consider the following problem:
 $\min -x_1 - x_2 - 2x_3$ subject to $3x_1 + 5x_2 + 10x_3 <= 10000$, $3x_1 + 8x_2 + x_3 <= 10000$, $3x_1 + 2x_2 + x_3 <= 10000$, and $x_1, x_2, x_3 \in [2,997] \cap \mathbb{P}$.
+
+```math
+\begin{align}
+  I_{k_1,\dots,k_n}
+  &= \int_{C_n} x_1^{k_1}\cdots x_n^{k_n}\\
+    &= \prod_i \frac{1 + (-1)^{k_i}}{k_i+1}
+  =\begin{cases}
+    0&\text{if any $k_i$ is odd}\\
+    |C_n|&\text{if all $k_i=0$}\\
+    I_{k_1,\dots,k_{i_0}-2,\dots,k_n} \times \frac{k_{i_0}-1}{k_{i_0}+1}&\text{if $k_{i_0} > 0$}
+  \end{cases}
+\end{align}
+```
+
 To solve this problem we assign:
 c = np.array([-1, -1, -2]),
 A = np.array([[3,5,10],[3,8,1], [3,2,1]]),
