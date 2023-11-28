@@ -4,14 +4,13 @@ We provide an algorithm to solve a prime program (PP) and a code to check if the
 
 ### Example of a PP
 Consider the following problem:
-$\min -x_1 - x_2 - 2x_3$ subject to $3x_1 + 5x_2 + 10x_3 <= 10000$, $3x_1 + 8x_2 + x_3 <= 10000$, $3x_1 + 2x_2 + x_3 <= 10000$, and $x_1, x_2, x_3 \in [2,997] \cap \mathbb{P}$.
 
 ```math
 \begin{align}
-  \min \quad & -x_1 - x_2 - 2x_3 \\
-  \text{s.t.} \quad & 3x_1 + 5x_2 + 10x_3 <= 10000, \\
-  & 3x_1 + 8x_2 + x_3 <= 10000, \\
-  & 3x_1 + 2x_2 + x_3 <= 10000, \\
+  \min \quad -&x_1 - x_2 - 2x_3 \\
+  \text{s.t.} \quad & 3x_1 + 5x_2 + 10x_3 && \leq 10000, \\
+  & 3x_1 + 8x_2 + x_3 && \leq 10000, \\
+  & 3x_1 + 2x_2 + x_3 && \leq 10000, \\
   & x_1, x_2, x_3 \in [2,997] \cap \mathbb{P}.
 \end{align}
 ```
