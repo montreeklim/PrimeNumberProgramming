@@ -2,15 +2,24 @@
 This project is based on the paper **...**.
 We provide an algorithm to solve a prime program (PP) and a code to check if the sensitivity analysis works with the perturbed problem or not. There, using a proposed branch-and-bound algorithm with depth-first-search to solve a given PP. The branching variable is a non-prime relaxation solution which is the furthest from its closest prime number.
 
+### General formulation of PP
+```math
+\begin{align}
+  \min_{x} \quad & cx \\
+  \text{s.t.} \quad & Ax \geq b, \\
+  & x_i \in [2,M] \cap \mathbb{P} \quad \forall i.
+\end{align}
+```
+
 ### Example of a PP
 Consider the following problem:
 
 ```math
 \begin{align}
   \min_{x_1,x_2,x_3} \quad &-x_1 - x_2 - 2x_3 \\
-  \text{s.t.} \quad & 3x_1 + 5x_2 + 10x_3 && \leq 10000, \\
-  & 3x_1 + 8x_2 + x_3 && \leq 10000, \\
-  & 3x_1 + 2x_2 + x_3 && \leq 10000, \\
+  \text{s.t.} \quad & 3x_1 + 5x_2 + 10x_3 && \geq 10000, \\
+  & 3x_1 + 8x_2 + x_3 && \geq 10000, \\
+  & 3x_1 + 2x_2 + x_3 && \geq 10000, \\
   & x_1, x_2, x_3 \in [2,997] \cap \mathbb{P}.
 \end{align}
 ```
