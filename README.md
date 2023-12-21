@@ -33,6 +33,16 @@ Consider the following problem:
 \end{align}
 ```
 
+```
+c = np.array([-1, -1, -2])
+A = np.array([[3,5,10],[3,8,1], [3,2,1]])
+b = np.array([10000,10000,10000])
+lower_bounds=np.array([2,2,2])
+upper_bounds = np.array([997, 997, 997])
+
+node_count, global_ub, incumbent = branch_and_bound_prime(c, A, b, lower_bounds, upper_bounds)
+```
+
 To solve this problem we assign:
 c = np.array([-1, -1, -2]),
 A = np.array([[3,5,10],[3,8,1], [3,2,1]]),
