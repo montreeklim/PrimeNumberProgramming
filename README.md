@@ -49,7 +49,7 @@ node_count, global_ub, incumbent = branch_and_bound_prime(c, A, b, lower_bounds,
 ```
 **** Can you show snippets of the output so that someone running the code can verify he is doing it correctly? what would be relevant to include for the output? perhaps the root node output as you say below and the end result of the code***
 
-The optimal solution of the relaxation at the root node is $x = [997, 841.08, 280.36]$. 997 is prime. Then, $\bar{p}(841.08) = 853$ and $\underline{p}(841.08) = 839$, and the distance to the closest prime is 2.08; while, $\bar{p}(280.36) = 281$ and $\underline{p}(280.36) = 277$, and the distance to the closest prime is $0.64$. We choose $x_2$ to branch on because $2.08 > 0.64$. COntinuing, the enumeration tree of this problem has $237$ nodes with the objective function value of $-2398.0$ and the optimal solution of $[x_1, x_2, x_3]=[997.0, 839.0, 281.0]$. The code displays the following message following completion is xxxx seconds:
+The optimal solution of the relaxation at the root node is $x = [997, 841.08, 280.36]$. 997 is prime. Then, $\bar{p}(841.08) = 853$ and $\underline{p}(841.08) = 839$, and the distance to the closest prime is 2.08; while, $\bar{p}(280.36) = 281$ and $\underline{p}(280.36) = 277$, and the distance to the closest prime is $0.64$. We choose $x_2$ to branch on because $2.08 > 0.64$. *** I've not gone through your new edits on the paper, but is $\underline{p}(841.08) the notation you use now? *** Continuing, the enumeration tree of this problem has $237$ nodes with the objective function value of $-2398.0$ and the optimal solution of $[x_1, x_2, x_3]=[997.0, 839.0, 281.0]$. The code displays the following message following completion is xxxx seconds:
 
 
 
