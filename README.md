@@ -60,8 +60,8 @@ Consider the following problem:
 ```math
 \begin{align}
   \min_{x_1,x_2} \quad -&x_1 \\
-  \text{s.t.} \quad & x_1 + x_2 && \geq 1000, \\
-  -& x_1 - x_2 && \geq -1000, \\
+  \text{s.t.} \quad & x_1 + x_2 \geq 1000, \\
+  -& x_1 - x_2 \geq -1000, \\
   & x_1, x_2 \in [2,100000] \cap \mathbb{P}.
 \end{align}
 ```
@@ -69,8 +69,8 @@ and the perturbed problem:
 ```math
 \begin{align}
   \min_{x_1,x_2} \quad -&x_1 \\
-  \text{s.t.} \quad & x_1 + x_2 && \geq 1000+4, \\
-  -& x_1 - x_2 && \geq -1000-4, \\
+  \text{s.t.} \quad & x_1 + x_2 \geq 1000+4, \\
+  -& x_1 - x_2 \geq -1000-4, \\
   & x_1, x_2 \in [2,100000] \cap \mathbb{P}.
 \end{align}
 ```
