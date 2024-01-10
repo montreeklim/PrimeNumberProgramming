@@ -41,7 +41,6 @@ A = np.array([[3,5,10],[3,8,1], [3,2,1]])
 b = np.array([10000,10000,10000])
 lower_bounds=np.array([2,2,2])
 upper_bounds = np.array([997, 997, 997])
-
 ```
 We run the code via the command
 ```
@@ -62,7 +61,7 @@ Consider the following problem:
 \begin{align}
   \min_{x_1,x_2} \quad &-x_1 \\
   \text{s.t.} \quad & x_1 + x_2 && \geq 1000, \\
-  & -x_1 - x_2 && \geq -1000, \\
+  -& x_1 - x_2 && \geq -1000, \\
   & x_1, x_2 \in [2,100000] \cap \mathbb{P}.
 \end{align}
 ```
@@ -71,7 +70,7 @@ and the perturbed problem:
 \begin{align}
   \min_{x_1,x_2} \quad &-x_1 \\
   \text{s.t.} \quad & x_1 + x_2 && \geq 1000+4, \\
-  & -x_1 - x_2 && \geq -1000-4, \\
+  -& x_1 - x_2 && \geq -1000-4, \\
   & x_1, x_2 \in [2,100000] \cap \mathbb{P}.
 \end{align}
 ```
