@@ -59,7 +59,7 @@ Continuing, the enumeration tree of this problem has $237$ nodes with the object
 Consider the following problem:
 ```math
 \begin{align}
-  \min_{x_1,x_2} \quad &-x_1 \\
+  \min_{x_1,x_2} \quad -&x_1 \\
   \text{s.t.} \quad & x_1 + x_2 && \geq 1000, \\
   -& x_1 - x_2 && \geq -1000, \\
   & x_1, x_2 \in [2,100000] \cap \mathbb{P}.
@@ -68,7 +68,7 @@ Consider the following problem:
 and the perturbed problem:
 ```math
 \begin{align}
-  \min_{x_1,x_2} \quad &-x_1 \\
+  \min_{x_1,x_2} \quad -&x_1 \\
   \text{s.t.} \quad & x_1 + x_2 && \geq 1000+4, \\
   -& x_1 - x_2 && \geq -1000-4, \\
   & x_1, x_2 \in [2,100000] \cap \mathbb{P}.
