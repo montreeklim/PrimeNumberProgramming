@@ -8,8 +8,7 @@ We provide code for a branch and bound based algorithm to solve a prime program 
 \begin{align}
   z^* = \min_{x} \quad & cx \\
   \text{s.t.} \quad & Ax \geq b, \\
-  & x_i \in [2,M] \cap \mathbb{P} \quad \fora![snippet_bb_prime_function](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/67265717-4f94-4d91-9802-c8ecb2d476d1)
-ll i.
+  & x_i \in [2,M] \cap \mathbb{P} \quad \forall i.
 \end{align}
 ```
 
