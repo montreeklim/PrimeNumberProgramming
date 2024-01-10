@@ -54,8 +54,51 @@ The following is a snippet result of the function `branch_and_bound_prime`:
 
 
 The optimal solution of the relaxation at the root node is $x = [997, 841.08, 280.36]$. 997 is prime. Then, $\bar{p}(841.08) = 853$ and $\underline{p}(841.08) = 839$, and the distance to the closest prime is 2.08; while, $\bar{p}(280.36) = 281$ and $\underline{p}(280.36) = 277$, and the distance to the closest prime is $0.64$. We choose $x_2$ to branch on because $2.08 > 0.64$. *** I've not gone through your new edits on the paper, but is $\underline{p}(841.08)$ the notation you use now? The reason is that the display on the Git page of ${\bar{p}}_{280.36}$ or ${\underline{p}}_{280.36}$ looks weird.*** 
-Continuing, the enumeration tree of this problem has $237$ nodes with the objective function value of $-2398.0$ and the optimal solution of $[x_1, x_2, x_3]=[997.0, 839.0, 281.0]$. The code displays the following message following completion is 0.0766 seconds:
+Continuing, the enumeration tree of this problem has $237$ nodes with the objective function value of $-2398.0$ and the optimal solution of $[x_1, x_2, x_3]=[997.0, 839.0, 281.0]$. The code displays the following message following completion is 0.0766 seconds.
 
+
+Consider the following problem:
+```math
+\begin{align}
+  \min_{x_1,x_2} \quad &-x_1 \\
+  \text{s.t.} \quad & x_1 + x_2 && \geq 1000, \\
+  & -x_1 - x_2 && \geq -1000, \\
+  & x_1, x_2 \in [2,100000] \cap \mathbb{P}.
+\end{align}
+```
+and the perturbed problem:
+```math
+\begin{align}
+  \min_{x_1,x_2} \quad &-x_1 \\
+  \text{s.t.} \quad & x_1 + x_2 && \geq 1000+4, \\
+  & -x_1 - x_2 && \geq -1000-4, \\
+  & x_1, x_2 \in [2,100000] \cap \mathbb{P}.
+\end{align}
+```
+
+To do the sensitivity analysis we first assign:
+```
+c = np.array([-1, 0])
+A = np.array([[1, 1], [-1, -1]])
+b = np.array([1000, -1000])
+lower_bounds=np.array([2,2])
+upper_bounds = np.array([100000,100000])
+
+delta_z = 0
+delta_A = np.array([[0,0],[0,0]])
+delta_c = np.array([0,0])
+delta_b = np.array([4,-4])
+```
+
+We run the code via the command
+```
+SA_status = branch_and_bound_prime_SA(c=c, A=A, b=b, lower_bounds = lower_bounds, upper_bounds = upper_bounds,\
+                                      delta_z= delta_z, delta_A=delta_A, delta_b=delta_b, delta_c=delta_c)
+print(SA_status)
+```
+
+The following is a snippet result of the function `branch_and_bound_prime_SA`:
+![snippet_SA](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/55c40252-f6ca-4341-a7f4-dac9fff657ef)
 
 
 ## Repository content
