@@ -1,7 +1,7 @@
 # Prime Number Programming
 This project is based on the paper **...** ... a preprint of which is available at **...**
 
-We provide code for a branch and bound based algorithm to solve a prime program (PP). We then provide code to verify whether the objective function value of a perturbed PP is at least that of the original problem; i.e., a sensitivity analysis on the PP. We use a depth-first-search procuedure for solving the PP. The branching variable is the one that is farthest from its closest prime number. For details, see Section .. of the preprint.
+We provide code for a branch and bound based algorithm to solve a prime program (PP). We then provide code to verify whether the objective function value of a perturbed PP is at least that of the original problem; i.e., a sensitivity analysis on the PP. We use a depth-first-search procuedure for solving the PP. The branching variable is the one that is farthest from its closest prime number. For details, see Section 3 of the preprint.
 
 ### Formulation for a PP:
 ```math
@@ -49,7 +49,7 @@ node_count, global_ub, incumbent = branch_and_bound_prime(c, A, b, lower_bounds,
 ```
 **** Can you show snippets of the output so that someone running the code can verify he is doing it correctly? what would be relevant to include for the output? perhaps the root node output as you say below and the end result of the code***
 
-The optimal solution of the relaxation at the root node is $x = [997, 841.08, 280.36]$. 997 is prime. Then, $\bar{p}(841.08) = 853$ and $\underline{p}(841.08) = 839$, and the distance to the closest prime is 2.08; while, $\bar{p}(280.36) = 281$ and $\underline{p}(280.36) = 277$, and the distance to the closest prime is $0.64$. We choose $x_2$ to branch on because $2.08 > 0.64$. *** I've not gone through your new edits on the paper, but is $\underline{p}(841.08) the notation you use now? *** Continuing, the enumeration tree of this problem has $237$ nodes with the objective function value of $-2398.0$ and the optimal solution of $[x_1, x_2, x_3]=[997.0, 839.0, 281.0]$. The code displays the following message following completion is xxxx seconds:
+The optimal solution of the relaxation at the root node is $x = [997, 841.08, 280.36]$. 997 is prime. Then, $\bar{p}(841.08) = 853$ and $\underline{p}(841.08) = 839$, and the distance to the closest prime is 2.08; while, $\bar{p}(280.36) = 281$ and $\underline{p}(280.36) = 277$, and the distance to the closest prime is $0.64$. We choose $x_2$ to branch on because $2.08 > 0.64$. *** I've not gone through your new edits on the paper, but is $\underline{p}(841.08) the notation you use now? *** ** The display in Git page $\bar{p}_{280.36}$ or $\underline{p}_{280.36}$ look weird**  Continuing, the enumeration tree of this problem has $237$ nodes with the objective function value of $-2398.0$ and the optimal solution of $[x_1, x_2, x_3]=[997.0, 839.0, 281.0]$. The code displays the following message following completion is xxxx seconds:
 
 
 
