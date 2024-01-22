@@ -102,10 +102,8 @@ The following is a snippet result of the function `branch_and_bound_prime_SA`:
 
 ## Repository content
 The repository contains the following content:
-- `PP_branch_and_bound.ipynb` a Jupyter notebook file to run the branch-and-bound algorithm for a PP. The function (**which function?**)  `branch_and_bound_prime` returns the number of nodes in the enumeration tree, the objective function value, an optimal solution, and computation time.
-- `Sensitivity_Analysis_PP.ipynb` a Jupyter notebook file to run the sensitivity analysis for a PP and its perturbed problem. The function (**which function?**) `branch_and_bound_prime_SA` returns True if the objective function value of the perturbed problem is at least $z^* - \Delta$, and False if this implication cannot be made through the sensitivity analysis.
-
-***Above are these files containing one function? Maybe sensible to write the input and output?*** Yes, each file contains one main function. Do you mean to print out the result instead of return since there is only one function?
+- `PP_branch_and_bound.ipynb` a Jupyter notebook file to run the branch-and-bound algorithm for a PP. The function `branch_and_bound_prime`, included in this notebook, takes as input XXXX and returns as output the number of nodes in the enumeration tree, the objective function value, an optimal solution, and computation time.
+- `Sensitivity_Analysis_PP.ipynb` a Jupyter notebook file to run the sensitivity analysis for a PP and its perturbed problem. The function `branch_and_bound_prime_SA`, included in this notebook, takes as input XXXX returns True if the objective function value of the perturbed problem is at least $z^* - \Delta$, and False if this implication cannot be made through the sensitivity analysis.
 
 ## Requirements to run code
 The code uses the optimization solver Gurobi and sympy package required to run it.  
