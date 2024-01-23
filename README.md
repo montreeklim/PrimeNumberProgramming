@@ -83,7 +83,7 @@ b = np.array([1000, -1000])
 lower_bounds=np.array([2,2])
 upper_bounds = np.array([100000,100000])
 
-delta_z = 0
+Delta = 0
 delta_A = np.array([[0,0],[0,0]])
 delta_c = np.array([0,0])
 delta_b = np.array([4,-4])
@@ -92,7 +92,7 @@ delta_b = np.array([4,-4])
 We run the code via the command
 ```
 SA_status = branch_and_bound_prime_SA(c=c, A=A, b=b, lower_bounds = lower_bounds, upper_bounds = upper_bounds,\
-                                      delta_z= delta_z, delta_A=delta_A, delta_b=delta_b, delta_c=delta_c)
+                                      Delta= Delta, delta_A=delta_A, delta_b=delta_b, delta_c=delta_c)
 print(SA_status)
 ```
 
