@@ -116,7 +116,7 @@ for i in range(1,n+1):
 
 We run the code via the command
 ```
-sol, ttime = main_algorithm(n=n, M=M, TIME_LIMIT=TIME_LIMIT, solve_time_limit=solve_time_limit, alpha=alpha, fixing_name=fixing_name, branching_name=branch_name, br_arg = branch_arg, fix_arg = fixing_arg)
+sol, ttime = main_algorithm(n=n, M=M, TIME_LIMIT=TIME_LIMIT, solve_time_limit=solve_time_limit, alpha=alpha, fixing_name=fixing_name, branching_name=branch_name, br_arg = branch_arg, fix_arg = fix_arg_ExcludeOne)
 print(sol)
 print(ttime)
 ```
