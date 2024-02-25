@@ -96,7 +96,7 @@ print(SA_status)
 ```
 
 The following is a snippet result of the function `branch_and_bound_prime_SA`:
-![SA_snippet](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/468ce65d-e812-4a6f-8d21-c64f6c92e881).
+![SA_snippet](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/468ce65d-e812-4a6f-8d21-c64f6c92e881)
 
 To run the heuristic approach we first assign:
 ```
