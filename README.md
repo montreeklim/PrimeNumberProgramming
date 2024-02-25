@@ -96,8 +96,30 @@ print(SA_status)
 ```
 
 The following is a snippet result of the function `branch_and_bound_prime_SA`:
-![SA_snippet](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/468ce65d-e812-4a6f-8d21-c64f6c92e881)
+![SA_snippet](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/468ce65d-e812-4a6f-8d21-c64f6c92e881).
 
+To run the heuristic approach we first assign:
+```
+n = 12
+M = 1000
+TIME_LIMIT = 3000
+solve_time_limit = 600
+alpha = 0.2
+branch_name = 'Modulo'
+branch_arg = 5
+fixing_name = 'ExcludeOne'
+# Create fixing args
+fix_arg_ExcludeOne = {}
+for i in range(1,n+1):
+    fix_arg_ExcludeOne[i] = [[i-2, i-1],[i-1]]
+```
+
+We run the code via the command
+```
+sol, ttime = main_algorithm(n=n, M=M, TIME_LIMIT=TIME_LIMIT, solve_time_limit=solve_time_limit, alpha=alpha, fixing_name=fixing_name, branching_name=branch_name, br_arg = branch_arg, fix_arg = fixing_arg)
+print(sol)
+print(ttime)
+```
 
 ## Repository content
 The repository contains the following content:
