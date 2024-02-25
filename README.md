@@ -106,7 +106,7 @@ TIME_LIMIT = 3000
 solve_time_limit = 600
 alpha = 0.2
 branch_name = 'Modulo'
-branch_arg = 5
+branch_arg = 11
 fixing_name = 'ExcludeOne'
 # Create fixing args
 fix_arg_ExcludeOne = {}
