@@ -98,27 +98,39 @@ print(SA_status)
 The following is a snippet result of the function `branch_and_bound_prime_SA`:
 ![SA_snippet](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/468ce65d-e812-4a6f-8d21-c64f6c92e881)
 
-To run the heuristic approach we first assign:
+To run the heuristic approach to create table of results of different strategies we run the code via the command
 ```
-n = 12
-M = 1000
-TIME_LIMIT = 3000
-solve_time_limit = 600
-alpha = 0.2
-branch_name = 'Modulo'
-branch_arg = 11
-fixing_name = 'ExcludeOne'
-# Create fixing args
-fix_arg_ExcludeOne = {}
-for i in range(1,n+1):
-    fix_arg_ExcludeOne[i] = [[i-2, i-1],[i-1]]
-```
-
-We run the code via the command
-```
-sol, ttime = main_algorithm(n=n, M=M, TIME_LIMIT=TIME_LIMIT, solve_time_limit=solve_time_limit, alpha=alpha, fixing_name=fixing_name, branching_name=branch_name, br_arg = branch_arg, fix_arg = fix_arg_ExcludeOne)
-print(sol)
-print(ttime)
+if __name__ == '__main__':
+    df = pd.DataFrame(columns=['Branching_strategy','Branching_arg', 'Fixing_strategy', 'Fixing_arg', '$n$', 'Solution', 'Time'])
+    # Parameters
+    n = 5
+    M = 1000
+    TIME_LIMIT = 600
+    solve_time_limit = 300
+    fixing_str = ['Naive', 'SelectAll', 'ExcludeOne', 'ExcludeTwo', 'SelectHalf']
+    branch_str = ['Naive', 'Modulo', 'Modulo', 'Modulo', 'Modulo']
+    branch_arg = [0, 1, 5, 7, 11]
+    # Run naive fixing
+    for i in range(5):
+        df = main_algorithm(n = n, M = M, TIME_LIMIT = TIME_LIMIT, solve_time_limit = solve_time_limit, alpha = 0.2, fixing_name = fixing_str[0], branching_name = branch_str[i], br_arg = branch_arg[i], fix_arg = [], df = df)
+    # # Run SelectAll
+    for i in range(5):
+        df = main_algorithm(n = n, M = M, TIME_LIMIT = TIME_LIMIT, solve_time_limit = solve_time_limit, alpha = 0.2, fixing_name = fixing_str[1], branching_name = branch_str[i], br_arg = branch_arg[i], fix_arg = [], df = df)
+    # # Run ExcludeOne
+    fixing_arg = [[i] for i in range(n)]
+    for i in range(5):
+        for j in range(len(fixing_arg)):
+            df = main_algorithm(n = n, M = M, TIME_LIMIT = TIME_LIMIT, solve_time_limit = solve_time_limit, alpha = 0.2, fixing_name = fixing_str[2], branching_name = branch_str[i], br_arg = branch_arg[i], fix_arg = fixing_arg[j], df = df)
+    # Run ExcludeTwo
+    fixing_arg = [[i,j] for i in range(n) for j in range(i+1, n)]
+    for i in range(5):
+        for j in range(len(fixing_arg)):
+            df = main_algorithm(n = n, M = M, TIME_LIMIT = TIME_LIMIT, solve_time_limit = solve_time_limit, alpha = 0.2, fixing_name = fixing_str[3], branching_name = branch_str[i], br_arg = branch_arg[i], fix_arg = fixing_arg[j], df = df)
+    
+    # determining the name of the file
+    file_name = 'average_prime_format_'+str(n)+'.xlsx'
+    # saving the excel
+    df.to_excel(file_name)
 ```
 
 ## Repository content
@@ -127,7 +139,7 @@ The repository contains the following content:
   takes as input arrays c = $c$, A = $A$, b = $b$, lower_bounds = array of lower bounds of variables, upper_bounds = array of upper bounds of variables, used in the PP formulation and returns as output the number of nodes in the enumeration tree, the objective function value, an optimal solution, and computation time.
 - `Sensitivity_Analysis_PP.ipynb` a Jupyter notebook file to run the sensitivity analysis for a PP and its perturbed problem. The function `branch_and_bound_prime_SA`, included in this notebook, takes as input arrays c = $c$, A = $A$, b = $b$, lower_bounds = 
    array of lower bounds of variables, upper_bounds = array of upper bounds of variables, Delta = $\Delta $, delta_A = $A_\delta $, delta_b = $b_\delta $, delta_c = $c_\delta$ used in the perturbed problem and returns True if the objective function value of the perturbed problem is at least $z^* - \Delta$, and False if this implication cannot be made through the sensitivity analysis.
-- `Average_prime_heuristic.ipynb` a Jupyter notebook file to run the heuristic approach to find a sequence of primes such that the average of any two primes in the sequence is also a prime. The function `main_algorithm`, included in this notebook, takes as input n = number of primes in the sequence, M = initial upper bound for the corresponding PP, TIME_LIMIT = total time limit of the algorithm, solve_time_limit = time limit for each iteration, alpha = increasing ratio of the upper bound, fixing_name = {'Naive', 'SelectAll', 'SelectHalf', 'ExcludeOne', 'ExcludeTwo'} name of fixing strategy, branching_name = {'Naive', 'Modulo'} name of branching strategy, br_arg = remainder of prime modulo 12 if branching_name == 'Modulo', fix_arg = [p, l] where p is a list containing unassigned indices of solution in the current iteration and l is a list containing indices of previous solution to be excluded. The function returns solution and total time to obtain a sequence of $n$ primes or statement of infeasibility.
+- `Solution Strategies.ipynb` a Jupyter notebook file used to run a heuristic approach to find a sequence of primes such that the average of any two primes in the sequence is also a prime. The function main_algorithm, included in this notebook, takes as input n = number of primes in the sequence, M = initial upper bound for the corresponding PP, TIME_LIMIT = total time limit of the algorithm, solve_time_limit = time limit for each iteration, alpha = increasing ratio of the upper bound, fixing_name = {'Naive', 'SelectAll', 'SelectHalf', 'ExcludeOne', 'ExcludeTwo'} name of fixing strategy, branching_name = {'Naive', 'Modulo'} name of branching strategy, br_arg = remainder of prime modulo 12 if branching_name == 'Modulo', fix_arg = l where l is a list containing indices of previous solution to be excluded, df = a dataframe to contain the results. The function returns a dataframe df showing solutions and total times to obtain a sequence of $n$ primes or statement of infeasibility.
 
 ## Requirements to run code
 The code uses the optimization solver Gurobi and sympy package required to run it.  
