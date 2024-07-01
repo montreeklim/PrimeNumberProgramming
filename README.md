@@ -107,6 +107,7 @@ The following is a snippet result of the function `branch_and_bound_prime_SA`:
 ![code_sa_example](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/736fb384-97ff-4940-aef3-64232ec13a4b)
 
 ### Solution Strategies
+We are considering the problem of finding $n$ prime numbers ....
 To run the heuristic approach to create table of results of different strategies we run the code via the command
 ```
 if __name__ == '__main__':
