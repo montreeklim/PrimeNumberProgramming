@@ -52,7 +52,7 @@ The following is a snippet result of the function `branch_and_bound_prime`:
 
 Let $\bar{p}(x)$ denote the smallest prime number greater than $x \in \mathbb{R}^+$ and $\underline{p}(x)$ denote the largest prime number lesser than $x \in \mathbb{R}^+$.
 The optimal solution of the relaxation at the root node is $x = [997, 841.08, 280.36]$. $997$ is prime. Then, $\bar{p}(841.08) = 853$ and $\underline{p}(841.08) = 839$, and the distance to the closest prime is $2.08$; while, $\bar{p}(280.36) = 281$ and $\underline{p}(280.36) = 277$, and the distance to the closest prime is $0.64$. We choose $x_2$ to branch on because $2.08 > 0.64$. 
-Continuing, the enumeration tree of this problem has $237$ nodes with the objective function value of $-2398.0$ and the optimal solution of $[x_1, x_2, x_3]=[997.0, 839.0, 281.0]$. The code displays the following message following completion $0.0766$ seconds.
+Continuing, the enumeration tree of this problem has $237$ nodes with the objective function value of $-2398.0$ and the optimal solution of $[x_1, x_2, x_3]=[997.0, 839.0, 281.0]$. The code displays the following message after $0.0766$ seconds.
 
 
 Consider the following problem:
