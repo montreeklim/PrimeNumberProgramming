@@ -108,7 +108,7 @@ The following is a snippet result of the function `branch_and_bound_prime_SA`:
 
 ### Solution Strategies
 We are considering the problem of finding a sequence of distinct $n$ primes such that the arithmetic mean of any two of these primes is also a prime. Two solution strategies are used to improve model's solvability, see Section 4 of the preprint for the details.
-To run the heuristic approach to create table of results of different strategies we run the code via the command
+To create a table of results of different strategies given the parameter n, M, TIME_LIMIT, and solve_time_limit, we run the code via the command
 ```
 if __name__ == '__main__':
     df = pd.DataFrame(columns=['Branching_strategy','Branching_arg', 'Fixing_strategy', 'Fixing_arg', '$n$', 'Solution', 'Time'])
