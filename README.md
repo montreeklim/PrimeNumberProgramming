@@ -95,15 +95,16 @@ delta_b = np.array([4,-4])
 
 We run the code via the command
 ```
-SA_status = branch_and_bound_prime_SA(c=c, A=A, b=b, lower_bounds = lower_bounds, upper_bounds = upper_bounds,\
+SA_status, RHS_value = branch_and_bound_prime_SA(c=c, A=A, b=b, lower_bounds = lower_bounds, upper_bounds = upper_bounds,\
                                       Delta= Delta, delta_A=delta_A, delta_b=delta_b, delta_c=delta_c)
-print(SA_status)
+if SA_status:
+    print('Using the sensitivity analysis, it can be implied that the optimal objective value of the perturbed problem is at least {}.'.format(RHS_value))
+else:
+    print('It cannot be implied about the optimal objective value of the perturbed problem.')
 ```
 
 The following is a snippet result of the function `branch_and_bound_prime_SA`:
-![SA_snippet](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/468ce65d-e812-4a6f-8d21-c64f6c92e881)
-
-The `True` means ....
+![code_sa_example](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/736fb384-97ff-4940-aef3-64232ec13a4b)
 
 ### Solution Strategies
 To run the heuristic approach to create table of results of different strategies we run the code via the command
@@ -146,8 +147,8 @@ The repository contains the following content:
 - `PP_branch_and_bound.ipynb` a Jupyter notebook file to run the branch-and-bound algorithm for a PP. The function `branch_and_bound_prime`, included in this notebook,
   takes as input arrays c = $c$, A = $A$, b = $b$, lower_bounds = array of lower bounds of variables, upper_bounds = array of upper bounds of variables, used in the PP formulation and returns as output the number of nodes in the enumeration tree, the objective function value, an optimal solution, and computation time.
 - `Sensitivity_Analysis_PP.ipynb` a Jupyter notebook file to run the sensitivity analysis for a PP and its perturbed problem. The function `branch_and_bound_prime_SA`, included in this notebook, takes as input arrays c = $c$, A = $A$, b = $b$, lower_bounds = 
-   array of lower bounds of variables, upper_bounds = array of upper bounds of variables, Delta = $\Delta $, delta_A = $A_\delta $, delta_b = $b_\delta $, delta_c = $c_\delta$ used in the perturbed problem and returns True if the objective function value of the perturbed problem is at least $z^* - \Delta$, and False if this implication cannot be made through the sensitivity analysis.
-- `Solution Strategies.ipynb` a Jupyter notebook file used to run a heuristic approach to find a sequence of primes such that the average of any two primes in the sequence is also a prime. The function main_algorithm, included in this notebook, takes as input n = number of primes in the sequence, M = initial upper bound for the corresponding PP, TIME_LIMIT = total time limit of the algorithm, solve_time_limit = time limit for each iteration, alpha = increasing ratio of the upper bound, fixing_name = {'Naive', 'SelectAll', 'SelectHalf', 'ExcludeOne', 'ExcludeTwo'} name of fixing strategy, branching_name = {'Naive', 'Modulo'} name of branching strategy, br_arg = remainder of prime modulo 12 if branching_name == 'Modulo', fix_arg = l where l is a list containing indices of previous solution to be excluded, df = a dataframe to contain the results. The function returns a dataframe df showing solutions and total times to obtain a sequence of $n$ primes or statement of infeasibility.
+   array of lower bounds of variables, upper_bounds = array of upper bounds of variables, Delta = $\Delta $, delta_A = $A_\delta $, delta_b = $b_\delta $, delta_c = $c_\delta$ used in the perturbed problem and returns SA_status and RHS_value where SA_status is True if the objective function value of the perturbed problem is at least $z^* - \Delta$ (RHS_value), and False if this implication cannot be made through the sensitivity analysis.
+- `Solution Strategies.ipynb` a Jupyter notebook file used to run a heuristic approach to find a sequence of primes such that the average of any two primes in the sequence is also a prime. The function main_algorithm, included in this notebook, takes as input n = number of primes in the sequence, M = initial upper bound for the corresponding PP, TIME_LIMIT = total time limit of the algorithm, solve_time_limit = time limit for each iteration, alpha = increasing ratio of the upper bound, fixing_name = {'Naive', 'SelectAll', 'ExcludeOne', 'ExcludeTwo'} name of fixing strategy, branching_name = {'Naive', 'Modulo'} name of branching strategy, br_arg = remainder of prime modulo 12 if branching_name == 'Modulo', fix_arg = l where l is a list containing indices of previous solution to be excluded, df = a dataframe to contain the results. The function returns a dataframe df showing solutions and total times to obtain a sequence of $n$ primes or statement of infeasibility.
 
 ## Requirements to run code
 The code uses the optimization solver Gurobi and sympy package required to run it.  
