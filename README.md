@@ -107,7 +107,7 @@ The following is a snippet result of the function `branch_and_bound_prime_SA`:
 ![code_sa_example](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/736fb384-97ff-4940-aef3-64232ec13a4b)
 
 ### Solution Strategies
-We are considering the problem of finding $n$ prime numbers ....
+We are considering the problem of finding a sequence of distinct $n$ primes such that the arithmetic mean of any two of these primes is also a prime. Two solution strategies are used to improve model's solvability, see Section 4 of the preprint for the details.
 To run the heuristic approach to create table of results of different strategies we run the code via the command
 ```
 if __name__ == '__main__':
@@ -142,6 +142,7 @@ if __name__ == '__main__':
     # saving the excel
     df.to_excel(file_name)
 ```
+In this example, the Excel file is saved as average_prime_format_5.xlsx, containing the name of the branching strategy with the corresponding argument, the name of the fixing strategy with the corresponding argument, the number of primes (in this case 5), the obtained solution, and the computation time.
 
 ## Repository content
 The repository contains the following content:
