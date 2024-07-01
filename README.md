@@ -27,9 +27,9 @@ Consider the following problem:
 ```math
 \begin{align}
   \min_{x_1,x_2,x_3} \quad &-x_1 - x_2 - 2x_3 \\
-  \text{s.t.} \quad & 3x_1 + 5x_2 + 10x_3 && \geq 10000, \\
-  & 3x_1 + 8x_2 + x_3 && \geq 10000, \\
-  & 3x_1 + 2x_2 + x_3 && \geq 10000, \\
+  \text{s.t.} \quad & -3x_1 - 5x_2 - 10x_3 && \geq -10000, \\
+  & -3x_1 - 8x_2 - x_3 && \geq -10000, \\
+  & -3x_1 - 2x_2 - x_3 && \geq -10000, \\
   & x_1, x_2, x_3 \in [2,997] \cap \mathbb{P}.
 \end{align}
 ```
@@ -37,8 +37,8 @@ Consider the following problem:
 To solve this problem we first assign:
 ```
 c = np.array([-1, -1, -2])
-A = np.array([[3,5,10],[3,8,1], [3,2,1]])
-b = np.array([10000,10000,10000])
+A = np.array([[-3,-5,-10],[-3,-8,-1], [-3,-2,-1]])
+b = np.array([-10000,-10000,-10000])
 lower_bounds=np.array([2,2,2])
 upper_bounds = np.array([997, 997, 997])
 ```
