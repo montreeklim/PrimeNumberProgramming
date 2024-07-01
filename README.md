@@ -52,7 +52,8 @@ print('The computation time is ', computation_time)
 ```
 
 The following is a snippet result of the function `branch_and_bound_prime`:
-![snippet_bb_prime_function](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/9dc1a1b1-dbb0-48fd-92bf-9b2b867fbaca)
+![code_bb_example](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/ece513d9-993c-404e-b6ad-82985948beb3).
+
 
 Let $\bar{p}(x)$ denote the smallest prime number greater than $x \in \mathbb{R}^+$ and $\underline{p}(x)$ denote the largest prime number lesser than $x \in \mathbb{R}^+$.
 The optimal solution of the relaxation at the root node is $x = [997, 841.08, 280.36]$. $997$ is prime. Then, $\bar{p}(841.08) = 853$ and $\underline{p}(841.08) = 839$, and the distance to the closest prime is $2.08$; while, $\bar{p}(280.36) = 281$ and $\underline{p}(280.36) = 277$, and the distance to the closest prime is $0.64$. We choose $x_2$ to branch on because $2.08 > 0.64$. 
