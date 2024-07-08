@@ -107,7 +107,7 @@ The following is a snippet result of the function `branch_and_bound_prime_SA`:
 ![code_sa_example](https://github.com/montreeklim/PrimeNumberProgramming/assets/65499015/736fb384-97ff-4940-aef3-64232ec13a4b)
 
 ### Solution Strategies
-We are considering the problem of finding a sequence of distinct primes such that the arithmetic mean of any two of these primes is also a prime. Two solution strategies are used to improve the model's solvability; see Section 4 of the preprint for details. To create a table of results for different strategies given the parameters n, M, TIME_LIMIT, and solve_time_limit, we run the code via the command:
+We consider the problem of finding a sequence of distinct primes such that the arithmetic mean of any two of these primes is also a prime. Two solution strategies are used to improve the model's solvability; see Section 4 of the preprint for details. To create a table of results for different strategies given the parameters n, M, TIME_LIMIT, and solve_time_limit, we run the code via the command:
 ```
 if __name__ == '__main__':
     df = pd.DataFrame(columns=['Branching_strategy','Branching_arg', 'Fixing_strategy', 'Fixing_arg', '$n$', 'Solution', 'Time'])
